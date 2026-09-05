@@ -55,24 +55,24 @@ const expenses = [
 // -------------  2
 // --------------------
 
-function splitEvenly(noToSplit, splitInto) {
-  let split = noToSplit / splitInto;
-  split = Number(split.toFixed(0))
-  let splitSum = 0;
-  let ans = [];
-  for (let i = 1; i < splitInto; i++) {
-    splitSum += split
-    ans.push(split);
-  }
-  // console.log(splitSum);
+// function splitEvenly(noToSplit, splitInto) {
+//   let split = noToSplit / splitInto;
+//   split = Number(split.toFixed(0))
+//   let splitSum = 0;
+//   let ans = [];
+//   for (let i = 1; i < splitInto; i++) {
+//     splitSum += split
+//     ans.push(split);
+//   }
+//   // console.log(splitSum);
 
-  let lastSplit = noToSplit - splitSum;
-  ans.push(lastSplit);
+//   let lastSplit = noToSplit - splitSum;
+//   ans.push(lastSplit);
 
-  return ans;
-}
+//   return ans;
+// }
 
-console.log(splitEvenly(200, 3));
+// console.log(splitEvenly(200, 3));
 
 
 // --------------------
@@ -341,8 +341,50 @@ console.log(splitEvenly(200, 3));
 //     this.array = array;
 //   }
 
-//   myFilter = function(){
+//   myFilter = function(fn){
+//     let result = [];
 
+//     for (let i = 0; i < this.array.length; i++) {
+//       if(fn(this.array[i], i, this.array)){
+//         result.push(this.array[i]);
+//       }
+//     }
+//     return result;
+//   }
+
+//   myMap = function(fn) {
+//     let result = [];
+
+//     for(let i= 0; i< this.array.length; i++){
+//       const val = fn(this.array[i], i, this.array);
+//       result.push(val);
+//     }
+//     return result;
+//   }
+
+//   myReduce = function (fn, val) {
+//     let result;
+//     let startingIndex;
+//     if (!val) {
+//       result = this.array[0];
+//       startingIndex = 1;
+//     }else{
+//       result = val;
+//       startingIndex = 0;
+//     }
+
+//     for (let i = startingIndex; i < this.array.length; i++) {
+//       const val = fn(result, this.array[i]);
+//       result = val;
+//     }
+//     return result;
+//   }
+
+//   myForEach = function (fn) {
+//     for (let i = 0; i < this.array.length; i++) {
+//       this.array[i] = fn(this.array[i]);
+//     }
+//     return this.array;
 //   }
 // }
 
@@ -350,9 +392,10 @@ console.log(splitEvenly(200, 3));
 
 // let users = new MyArray(input);
 
-// users.myFilter((e) => { 
-//   e % 2
-//  })
+// console.log(users.myFilter((num) => num%2 === 0));
+// console.log(users.myMap((num) => num*2));
+// console.log(users.myReduce((acc, cv) => acc+cv, 10));
+// console.log(users.myForEach((e) => e/2));
 
 // --------------------
 // ------------- 14
